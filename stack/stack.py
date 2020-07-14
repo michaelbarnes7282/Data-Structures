@@ -28,17 +28,12 @@ class Stack:
 
     def pop(self):
         if self.size > 1:
-            removed = self.storage.tail.value
-            self.storage.remove_tail()
             self.size -= 1
-            return removed
+            return self.storage.remove_tail()
         elif self.size == 1:
-            removed = self.storage.head.value
-            self.storage.remove_head()
             self.size -= 1
-            return removed
-        else:
-            pass
+            return self.storage.remove_head()
+        return None
 
 # class Stack:
 #     def __init__(self):
@@ -46,18 +41,13 @@ class Stack:
 #         self.storage = []
 
 #     def __len__(self):
-#         return self.size
+#         return len(self.storage)
 
 #     def push(self, value):
 #         self.storage.append(value)
-#         self.size += 1
 #         return value
 
 #     def pop(self):
 #         if self.size > 0:
-#             removed = self.storage[self.size - 1]
-#             self.storage.pop(self.size - 1)
-#             self.size -= 1
-#             return removed
-#         else:
-#             pass
+#             return self.storage.pop(len(self.storage) - 1)
+#         return None

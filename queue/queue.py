@@ -31,10 +31,8 @@ class Queue:
 
     def dequeue(self):
         if self.size > 0:
-            removed = self.storage.head.value
-            self.storage.remove_head()
             self.size -= 1
-            return removed
+            return self.storage.remove_head()
         else:
             pass
 
